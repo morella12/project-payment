@@ -36,6 +36,9 @@ Run Sequelize migrations from the `backend` directory:
 ```bash
 cd backend
 npm run db:migrate
+
+# Run seeders (when available)
+npm run db:seed
 ```
 
 ### 3. Configure environment variables

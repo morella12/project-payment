@@ -10,11 +10,11 @@ module.exports = {
         primaryKey: true,
         allowNull: false,
       },
-      card_number_encrypted: {
+      card_number: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      cvv_encrypted: {
+      cvv: {
         type: Sequelize.TEXT,
         allowNull: false,
       },
@@ -22,12 +22,8 @@ module.exports = {
         type: Sequelize.STRING(255),
         allowNull: false,
       },
-      expiration_month: {
-        type: Sequelize.SMALLINT,
-        allowNull: false,
-      },
-      expiration_year: {
-        type: Sequelize.SMALLINT,
+      expiration: {
+        type: Sequelize.DATE,
         allowNull: false,
       },
       created_at: {
@@ -46,11 +42,6 @@ module.exports = {
       name: 'idx_credit_cards_created_at',
     });
 
-    await queryInterface.sequelize.query(`
-      ALTER TABLE credit_cards
-        ADD CONSTRAINT chk_expiration_month CHECK (expiration_month BETWEEN 1 AND 12),
-        ADD CONSTRAINT chk_expiration_year CHECK (expiration_year >= 2000);
-    `);
   },
 
   async down(queryInterface) {

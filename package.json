@@ -10,8 +10,8 @@
     "dev:frontend": "npm run dev --prefix frontend",
     "start:backend": "npm run start --prefix backend",
     "start:frontend": "npm run start --prefix frontend",
-    "migrate": "npm run migrate --prefix backend",
-    "build:frontend": "npm run build --prefix frontend"
+    "db:migrate": "npm run db:migrate --prefix backend",
+    "db:seed": "npm run db:seed --prefix backend"
   },
   "devDependencies": {
     "concurrently": "^9.1.0"
