@@ -6,8 +6,8 @@ A full-stack credit card payment processing application with encrypted storage, 
 
 | Layer    | Technology                          |
 | -------- | ----------------------------------- |
-| Backend  | Node.js 20+, Express 4              |
-| Database | PostgreSQL 16                       |
+| Backend  | Node.js 20+, Express 4, Sequelize 6 |
+| Database | PostgreSQL 14+                      |
 
 ## Prerequisites
 
@@ -30,6 +30,12 @@ Create a database for the application:
 
 ```sql
 CREATE DATABASE payment_db;
+```
+Run Sequelize migrations from the `backend` directory:
+
+```bash
+cd backend
+npm run db:migrate
 ```
 
 ### 3. Configure environment variables

@@ -36,4 +36,7 @@ coverage/
 # Misc
 .vercel
 
+# Sequelize local overrides
+.sequelize-config
+
 package-lock.json
