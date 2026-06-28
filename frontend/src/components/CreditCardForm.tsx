@@ -83,7 +83,7 @@ export default function CreditCardForm() {
         isOpen: true,
         type: 'success',
         title: 'Payment Saved',
-        message: `${response.message}. Card ending in ${response.data.lastFour} was stored securely.`,
+        message: response.message,
       });
       setForm(INITIAL_FORM);
       setTouched({});
