@@ -71,18 +71,12 @@ export default function CreditCardForm() {
     if (Object.keys(validationErrors).length > 0) return;
 
     setIsSubmitting(true);
-
     try {
-      console.log("Testes");
-      
       const response = await submitCard({
         cardNumber: form.cardNumber.replace(/\s/g, ''),
         cvv: form.cvv,
         cardholderName: form.cardholderName.trim(),
-        expiration: new Date(
-          parseInt(form.expirationMonth, 10) +
-          parseInt(form.expirationYear, 10)
-        ),
+        expiration: form.expirationYear + '-' + form.expirationMonth + '-01',
       });
 
       setModal({

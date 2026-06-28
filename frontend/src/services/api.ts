@@ -4,7 +4,7 @@ export interface SubmitCardPayload {
   cardNumber: string;
   cvv: string;
   cardholderName: string;
-  expiration: Date;
+  expiration: string;
 }
 
 export interface ApiSuccessResponse {
