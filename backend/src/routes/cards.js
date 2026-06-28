@@ -13,12 +13,13 @@ const router = express.Router();
 router.post('/', async (req, res, next) => {
   try {
     const validated = validateCardPayload(req.body);
-
+    const { expiration } = validated;
+    const formatISO = expiration.toISOString();
     const card = await CreditCard.create({
       cardNumber: encrypt(validated.cardNumber),
       cvv: encrypt(validated.cvv),
       cardholderName: validated.cardholderName,
-      expiration: validated.expiration,
+      expiration: formatISO,
     });
 
     res.status(201).json({

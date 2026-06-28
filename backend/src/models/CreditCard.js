@@ -30,7 +30,7 @@ class CreditCard extends Model {
           field: 'cardholder_name',
         },
         expiration: {
-          type: DataTypes.SMALLINT,
+          type: DataTypes.DATE,
           allowNull: false,
           field: 'expiration',
         },

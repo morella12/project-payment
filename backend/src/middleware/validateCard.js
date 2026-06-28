@@ -10,13 +10,13 @@ const NAME_REGEX = /^[a-zA-ZÀ-ÿ\s'.-]{2,100}$/;
  */
 function validateCardPayload(body) {
   const errors = [];
-
   let { cardNumber, cvv, cardholderName, expiration } = body;
-
+  
   cardNumber = String(body.cardNumber ?? '').replace(/\s/g, '');
   cvv = String(body.cvv ?? '').trim();
   cardholderName = String(body.cardholderName ?? '').trim();
-  expiration = new Date(bodyexpiration);
+  expiration = new Date(expiration);
+
   const expirationMonth = expiration.getMonth() + 1;
   const expirationYear = expiration.getFullYear();
 
